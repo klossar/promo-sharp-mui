@@ -13,7 +13,7 @@
   "crons": [
     {
       "path": "/api/cron/sync-maiden-tips",
-      "schedule": "*/15 * * * *"
+      "schedule": "0 6 * * *"
     }
   ]
 }

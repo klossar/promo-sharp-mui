@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log('Starting maiden horse racing tips sync...');
+    console.log('Starting daily maiden horse racing tips sync...');
 
     // Fetch tips from WhaleBettor API
     const response = await fetch('https://whalebettor.com/api/v2/The%20Jump%20Outs/Tips');
