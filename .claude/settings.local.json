@@ -6,7 +6,11 @@
       "Bash(git push:*)",
       "Bash(npm run build:*)",
       "Bash(git commit:*)",
-      "WebFetch(domain:promo-sharp-mui.vercel.app)"
+      "WebFetch(domain:promo-sharp-mui.vercel.app)",
+      "WebFetch(domain:whalebettor.com)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma:*)",
+      "Bash(PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION=\"yes\" npx prisma migrate reset --force)"
     ],
     "deny": [],
     "ask": []

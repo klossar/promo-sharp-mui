@@ -1,0 +1,53 @@
+// PromoSharp Database Schema
+// Maiden Horse Racing Tips Integration
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model MaidenHorseRacingTip {
+  id          String    @id @default(cuid())
+
+  // Core Race Information
+  date        DateTime
+  track       String
+  race        Int
+  selection   String
+
+  // Betting Information
+  winOdds     Float?    @map("win_odds")
+  invested    Float?
+  returned    Float?
+  profit      Float?
+
+  // Analysis & Performance
+  analysis    String?   @db.Text
+  result      String?   // "1st", "2nd", "3rd", etc.
+  winBookie   String?   @map("win_bookie")
+
+  // Metadata
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  // Ensure unique tips per race/selection
+  @@unique([date, track, race, selection])
+  @@map("maiden_horse_racing_tips")
+}
+
+model TipCategory {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  active      Boolean   @default(true)
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@map("tip_categories")
+}
