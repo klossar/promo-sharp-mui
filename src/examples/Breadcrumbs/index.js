@@ -13,8 +13,8 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// react-router-dom components
-import { Link } from "react-router-dom";
+// Next.js components
+import Link from "next/link";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -39,7 +39,7 @@ function Breadcrumbs({ icon, title, route, light }) {
           },
         }}
       >
-        <Link to="/">
+        <Link href="/">
           <MDTypography
             component="span"
             variant="body2"
@@ -51,7 +51,7 @@ function Breadcrumbs({ icon, title, route, light }) {
           </MDTypography>
         </Link>
         {routes.map((el) => (
-          <Link to={`/${el}`} key={el}>
+          <Link href={`/${el}`} key={el}>
             <MDTypography
               component="span"
               variant="button"

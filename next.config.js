@@ -24,6 +24,7 @@ const nextConfig = {
       'examples': path.resolve(__dirname, 'src/examples'),
       'assets': path.resolve(__dirname, 'src/assets'),
       'layouts': path.resolve(__dirname, 'src/layouts'),
+      'react-router-dom': path.resolve(__dirname, 'src/lib/next-router-stub.js'),
     };
 
     return config;
