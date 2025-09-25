@@ -21,12 +21,13 @@
     "@prisma/client": "^6.16.2",
     "chart.js": "4.3.0",
     "chroma-js": "2.4.2",
+    "next": "^15.5.4",
     "pg": "^8.16.3",
     "prisma": "^6.16.2",
     "prop-types": "15.8.1",
-    "react": "18.2.0",
+    "react": "^19.1.1",
     "react-chartjs-2": "5.2.0",
-    "react-dom": "18.2.0",
+    "react-dom": "^19.1.1",
     "react-github-btn": "1.4.0",
     "react-router-dom": "6.11.0",
     "react-scripts": "5.0.1",
@@ -36,11 +37,10 @@
     "yup": "1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "npx prisma generate && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "dev": "next dev",
+    "build": "npx prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
     "postinstall": "npx prisma generate"
   },
   "eslintConfig": {

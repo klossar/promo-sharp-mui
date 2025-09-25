@@ -34,46 +34,15 @@ function MaidenHorseRacing() {
   const fetchTips = async (page = 1) => {
     try {
       setLoading(true);
-
-      // Fetch directly from WhaleBettor API for now
-      const response = await fetch('https://whalebettor.com/api/v2/The%20Jump%20Outs/Tips');
+      const response = await fetch(`/api/tips/maiden-horse-racing?page=${page}&limit=20`);
 
       if (!response.ok) {
         throw new Error('Failed to fetch tips');
       }
 
-      const allTips = await response.json();
-
-      // Process and format the data
-      const processedTips = allTips.map(tip => ({
-        id: `${tip.Date}-${tip.Track}-${tip.Race}-${tip.Selection}`.replace(/[^a-zA-Z0-9-]/g, '-'),
-        date: tip.Date,
-        track: tip.Track || 'Unknown Track',
-        race: parseInt(tip.Race) || 0,
-        selection: tip.Selection || 'Unknown Selection',
-        winOdds: tip['Win Odds'] ? parseFloat(tip['Win Odds']) : null,
-        invested: tip.Invested ? parseFloat(tip.Invested) : null,
-        returned: tip.Returned ? parseFloat(tip.Returned) : null,
-        profit: tip.Profit ? parseFloat(tip.Profit) : null,
-        analysis: tip.Analysis || null,
-        result: tip.Result || null,
-        winBookie: tip['Win Bookie'] || null,
-      })).filter(tip => tip.date && tip.track && tip.selection) // Filter out invalid entries
-        .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date desc
-
-      // Implement client-side pagination
-      const limit = 20;
-      const startIndex = (page - 1) * limit;
-      const endIndex = startIndex + limit;
-      const paginatedTips = processedTips.slice(startIndex, endIndex);
-
-      setTips(paginatedTips);
-      setPagination({
-        page: page,
-        limit: limit,
-        total: processedTips.length,
-        pages: Math.ceil(processedTips.length / limit),
-      });
+      const data = await response.json();
+      setTips(data.tips);
+      setPagination(data.pagination);
     } catch (err) {
       setError(err.message);
       console.error('Error fetching tips:', err);
