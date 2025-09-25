@@ -1,4 +1,4 @@
-import { db } from '../../../lib/db.js';
+import { db } from '../../../src/lib/db.js';
 
 export default async function handler(req, res) {
   // Verify this is a Vercel cron request
