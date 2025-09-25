@@ -10,7 +10,8 @@
       "WebFetch(domain:whalebettor.com)",
       "Bash(npm install:*)",
       "Bash(npx prisma:*)",
-      "Bash(PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION=\"yes\" npx prisma migrate reset --force)"
+      "Bash(PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION=\"yes\" npx prisma migrate reset --force)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []
