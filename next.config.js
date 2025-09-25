@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
@@ -14,6 +16,16 @@ const nextConfig = {
       net: false,
       tls: false,
     };
+
+    // Add alias for src directory absolute imports
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'components': path.resolve(__dirname, 'src/components'),
+      'examples': path.resolve(__dirname, 'src/examples'),
+      'assets': path.resolve(__dirname, 'src/assets'),
+      'layouts': path.resolve(__dirname, 'src/layouts'),
+    };
+
     return config;
   },
 };
