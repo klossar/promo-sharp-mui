@@ -18,9 +18,10 @@ function TodaysTips() {
       odds: "1.85",
       confidence: "high",
       promotion: "Risk Free Bet up to $50",
-      analysis: "Both teams have scored in their last 5 meetings. City averaging 2.8 goals at home, Arsenal 1.6 away.",
+      analysis:
+        "Both teams have scored in their last 5 meetings. City averaging 2.8 goals at home, Arsenal 1.6 away.",
       matchTime: "Today 3:00 PM",
-      bookmaker: "Bet365"
+      bookmaker: "Bet365",
     },
     {
       sport: "NBA",
@@ -28,9 +29,10 @@ function TodaysTips() {
       odds: "1.91",
       confidence: "medium",
       promotion: null,
-      analysis: "Lakers coming off strong road win. Warriors missing key players. Value in the spread.",
+      analysis:
+        "Lakers coming off strong road win. Warriors missing key players. Value in the spread.",
       matchTime: "Tonight 10:30 PM",
-      bookmaker: "DraftKings"
+      bookmaker: "DraftKings",
     },
     {
       sport: "Horse Racing",
@@ -38,17 +40,18 @@ function TodaysTips() {
       odds: "3.50",
       confidence: "high",
       promotion: "Price Boost - was 3.20",
-      analysis: "Excellent form on similar ground. Jockey/trainer combo has 28% strike rate at this course.",
+      analysis:
+        "Excellent form on similar ground. Jockey/trainer combo has 28% strike rate at this course.",
       matchTime: "Today 2:15 PM",
-      bookmaker: "Paddy Power"
-    }
+      bookmaker: "Paddy Power",
+    },
   ];
 
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox pt={3} px={3}>
         <MDTypography variant="h6" fontWeight="medium">
-          Today's Top Tips
+          {"Today's Top Tips"}
         </MDTypography>
         <MDTypography variant="button" color="text" fontWeight="regular">
           <MDTypography display="inline" variant="body2" verticalAlign="middle">

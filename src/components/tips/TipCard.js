@@ -1,14 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Chip,
-  Button,
-  Box,
-  Divider,
-} from "@mui/material";
+import { Card, CardContent, Typography, Chip, Button, Box, Divider } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 // Material Dashboard 2 React components
@@ -99,12 +91,7 @@ const TipCard = ({
               @{odds}
             </MDTypography>
             {bookmaker && (
-              <Chip
-                label={bookmaker}
-                variant="outlined"
-                size="small"
-                color="primary"
-              />
+              <Chip label={bookmaker} variant="outlined" size="small" color="primary" />
             )}
           </MDBox>
         </MDBox>
@@ -119,7 +106,7 @@ const TipCard = ({
               sx={{
                 fontWeight: "bold",
                 background: "linear-gradient(135deg, #10b981 0%, #34d399 100%)",
-                color: "white"
+                color: "white",
               }}
             />
           </MDBox>
